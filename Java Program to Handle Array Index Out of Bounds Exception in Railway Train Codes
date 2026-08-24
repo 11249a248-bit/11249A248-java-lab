@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class RailwayApp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String[] trainCodes = {"TN101", "TN202", "TN303", "TN404", "TN505"};
+
+        System.out.print("Enter train code index: ");
+        int index = sc.nextInt();
+
+        try {
+            System.out.println("Train Code: " + trainCodes[index]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Invalid index. Train code not found.");
+        }
+
+        System.out.println("Program completed.");
+    }
+}
