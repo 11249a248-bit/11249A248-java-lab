@@ -1,0 +1,50 @@
+class Student {
+    String name;
+    int id;
+    String section;
+    int mark;
+
+    Student(String name, int id, String section, int mark) {
+        this.name = name;
+        this.id = id;
+        this.section = section;
+        this.mark = mark;
+    }
+
+    void display() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student ID: " + id);
+        System.out.println("Section: " + section);
+        System.out.println("Mark: " + mark);
+        grade();
+    }
+
+    void grade() {
+        if (mark >= 90)
+            System.out.println("Grade: S");
+        else if (mark >= 80)
+            System.out.println("Grade: A");
+        else if (mark >= 70)
+            System.out.println("Grade: B");
+        else if (mark >= 60)
+            System.out.println("Grade: C");
+        else if (mark >= 50)
+            System.out.println("Grade: D");
+        else
+            System.out.println("Grade: F");
+    }
+
+    public static void main(String[] args) {
+        Student s1 = new Student("Rahul", 101, "A", 95);
+        Student s2 = new Student("Priya", 102, "B", 85);
+        Student s3 = new Student("Arun", 103, "A", 72);
+
+        s1.display();
+        System.out.println();
+
+        s2.display();
+        System.out.println();
+
+        s3.display();
+    }
+}
