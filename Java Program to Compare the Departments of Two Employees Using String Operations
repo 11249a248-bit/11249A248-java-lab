@@ -1,0 +1,34 @@
+class Employee {
+    String name;
+    String department;
+
+    Employee(String name, String department) {
+        this.name = name;
+        this.department = department;
+    }
+
+    void display() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Department: " + department);
+    }
+
+    static void compareDepartment(Employee e1, Employee e2) {
+        if (e1.department.equalsIgnoreCase(e2.department))
+            System.out.println("Both employees are working in the same department.");
+        else
+            System.out.println("Both employees are working in different departments.");
+    }
+
+    public static void main(String[] args) {
+        Employee e1 = new Employee("Rahul", "CSE");
+        Employee e2 = new Employee("Priya", "CSE");
+
+        e1.display();
+        System.out.println();
+
+        e2.display();
+        System.out.println();
+
+        compareDepartment(e1, e2);
+    }
+}
