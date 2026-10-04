@@ -1,0 +1,47 @@
+class Order extends Thread {
+    public void run() {
+        System.out.println("Order Placed");
+    }
+}
+
+class Delivery extends Thread {
+    public void run() {
+        System.out.println("Order Delivered");
+    }
+}
+
+class Count extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Count: " + i);
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+            }
+        }
+    }
+}
+
+class Payment implements Runnable {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Payment Processing...");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Order o = new Order();
+        Delivery d = new Delivery();
+        Count c = new Count();
+        Payment p = new Payment();
+
+        Thread t = new Thread(p);
+
+        o.start();
+        d.start();
+        c.start();
+        t.start();
+    }
+}
