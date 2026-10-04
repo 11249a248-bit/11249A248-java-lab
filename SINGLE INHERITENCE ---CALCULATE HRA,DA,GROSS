@@ -1,0 +1,33 @@
+class Employee {
+    int id;
+    String name;
+    double basic;
+}
+
+class PermanentEmployee extends Employee {
+    void display() {
+        double hra = basic * 20 / 100;
+        double da = basic * 10 / 100;
+        double gross = basic + hra + da;
+
+        System.out.println("Employee Details");
+        System.out.println("Employee ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Basic Salary: " + basic);
+        System.out.println("HRA: " + hra);
+        System.out.println("DA: " + da);
+        System.out.println("Gross Salary: " + gross);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        PermanentEmployee e = new PermanentEmployee();
+
+        e.id = 101;
+        e.name = "Arun";
+        e.basic = 20000;
+
+        e.display();
+    }
+}
