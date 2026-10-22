@@ -1,0 +1,33 @@
+
+
+import javax.swing.*;
+import java.awt.*;
+
+public class ShapesApplet extends JPanel {
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        g.drawString("Geometric Shapes", 120, 25);
+
+        g.drawRect(50, 50, 100, 60);
+
+        g.drawOval(200, 50, 80, 80);
+
+        g.drawLine(50, 160, 150, 160);
+
+        g.drawLine(200, 180, 250, 100);
+        g.drawLine(250, 100, 300, 180);
+        g.drawLine(300, 180, 200, 180);
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Shapes Drawing");
+        ShapesApplet panel = new ShapesApplet();
+
+        frame.add(panel);
+        frame.setSize(400, 280);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
