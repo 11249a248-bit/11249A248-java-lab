@@ -1,0 +1,32 @@
+
+import javax.swing.*;
+import java.awt.*;
+
+public class HumanFace extends JPanel {
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        g.setColor(Color.YELLOW);
+        g.fillOval(100, 50, 200, 200);
+
+        g.setColor(Color.BLACK);
+        g.fillOval(145, 110, 25, 25);
+        g.fillOval(230, 110, 25, 25);
+
+        g.drawLine(200, 135, 180, 175);
+        g.drawLine(180, 175, 210, 175);
+
+        g.drawArc(150, 150, 100, 60, 180, 180);
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Human Face");
+        HumanFace panel = new HumanFace();
+
+        frame.add(panel);
+        frame.setSize(400, 330);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
