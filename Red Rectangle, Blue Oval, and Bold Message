@@ -1,0 +1,30 @@
+
+import javax.swing.*;
+import java.awt.*;
+
+public class ColorApplet extends JPanel {
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        g.setColor(Color.RED);
+        g.drawRect(50, 50, 150, 80);
+
+        g.setColor(Color.BLUE);
+        g.drawOval(230, 50, 120, 80);
+
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Arial", Font.BOLD, 20));
+        g.drawString("Java Applets are fun!", 50, 180);
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Color Shapes");
+        ColorApplet panel = new ColorApplet();
+
+        frame.add(panel);
+        frame.setSize(450, 270);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
